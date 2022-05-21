@@ -16,19 +16,72 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text(
             "Calculator IMC",
-            style:
-                TextStyle(color: accentHexColor, fontWeight: FontWeight.w300),
+            style: TextStyle(
+                color: HexColor('#FCC91C'), fontWeight: FontWeight.w300),
           ),
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
         ),
-        backgroundColor: mainHexColor,
+        backgroundColor: HexColor('#1C1C1C'),
         body: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
                 height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 130,
+                    child: TextField(
+                      style: TextStyle(
+                          fontSize: 42,
+                          fontWeight: FontWeight.w300,
+                          color: HexColor('#FCC91C')),
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Inaltime (cm)",
+                        hintStyle: TextStyle(
+                            fontSize: 42,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white.withOpacity(.8)),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 130,
+                    child: TextField(
+                      style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.w300,
+                          color: HexColor('#FCC91C')),
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Greutate (kg)",
+                        hintStyle: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white.withOpacity(.8)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                child: Text(
+                  "Calculeaza!",
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: HexColor('#FCC91C')),
+                ),
               ),
             ],
           ),

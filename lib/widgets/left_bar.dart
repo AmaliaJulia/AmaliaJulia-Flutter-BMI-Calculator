@@ -2,7 +2,6 @@
 // ignore: unused_import
 import 'package:imc/constants/app_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:imc/main.dart';
 
 class LeftBar extends StatelessWidget {
   final double barWidth;
@@ -22,7 +21,7 @@ class LeftBar extends StatelessWidget {
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
               ),
-              color: accentHexColor),
+              color: HexColor('#FCC91C')),
         )
       ],
     );
