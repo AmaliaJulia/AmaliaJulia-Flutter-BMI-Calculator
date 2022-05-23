@@ -10,6 +10,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController _heightController = TextEditingController();
+  TextEditingController _weightController = TextEditingController();
+  double _imcResult = 0;
+  String _textResult = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     width: 130,
                     child: TextField(
+                      controller: _heightController,
                       style: TextStyle(
                           fontSize: 42,
                           fontWeight: FontWeight.w300,
@@ -54,6 +60,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     width: 130,
                     child: TextField(
+                      controller: _weightController,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.w300,
@@ -74,7 +82,21 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 30,
               ),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  double _h = double.parse(_heightController.text);
+                  double _w = double.parse(_weightController.text);
+                  setState(() {
+                    _imcResult = _w / (_h * _h);
+                    if (_imcResult > 25) {
+                      _textResult = "Supraponderal";
+                    } else if (_imcResult >= 18.5 && _imcResult <= 25) {
+                      _textResult = "Greutate normala";
+                    } else {
+                      _textResult = "Subponderal";
+                    }
+                  });
+                },
                 child: Text(
                   "Calculeaza!",
                   style: TextStyle(
@@ -88,20 +110,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Container(
                 child: Text(
-                  "10",
+                  _imcResult.toStringAsFixed(2),
                   style: TextStyle(fontSize: 90, color: HexColor('#FCC91C')),
                 ),
               ),
               SizedBox(
                 height: 30,
               ),
-              Container(
-                child: Text(
-                  "Normal weight",
-                  style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w400,
-                      color: HexColor('#FCC91C')),
+              Visibility(
+                visible: _textResult.isNotEmpty,
+                child: Container(
+                  child: Text(
+                    _textResult,
+                    style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w400,
+                        color: HexColor('#FCC91C')),
+                  ),
                 ),
               ),
               SizedBox(
