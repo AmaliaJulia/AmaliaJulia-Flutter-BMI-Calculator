@@ -22,13 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Text(
             "Calculator IMC",
             style: TextStyle(
-                color: HexColor('#FCC91C'), fontWeight: FontWeight.w300),
+                color: HexColor('#f58931'), fontWeight: FontWeight.w300),
           ),
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
         ),
-        backgroundColor: HexColor('#1C1C1C'),
+        backgroundColor: HexColor('#1c1c1c'),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -39,13 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: 130,
+                    width: 200,
                     child: TextField(
                       controller: _heightController,
                       style: TextStyle(
                           fontSize: 42,
                           fontWeight: FontWeight.w300,
-                          color: HexColor('#FCC91C')),
+                          color: HexColor('#f58931')),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -58,14 +58,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
-                    width: 130,
+                    width: 200,
                     child: TextField(
                       controller: _weightController,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.w300,
-                          color: HexColor('#FCC91C')),
+                          color: HexColor('#f58931')),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -98,11 +98,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   });
                 },
                 child: Text(
-                  "Calculeaza!",
+                  "Calculeaza",
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: HexColor('#FCC91C')),
+                      color: HexColor('#f58931')),
                 ),
               ),
               SizedBox(
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 child: Text(
                   _imcResult.toStringAsFixed(2),
-                  style: TextStyle(fontSize: 90, color: HexColor('#FCC91C')),
+                  style: TextStyle(fontSize: 90, color: HexColor('#f58931')),
                 ),
               ),
               SizedBox(
@@ -125,33 +125,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w400,
-                        color: HexColor('#FCC91C')),
+                        color: HexColor('#f58931')),
                   ),
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 30,
               ),
               LeftBar(
-                barWidth: 40,
+                barWidth: 50,
               ),
               SizedBox(
                 height: 20,
               ),
               LeftBar(
-                barWidth: 70,
+                barWidth: 80,
               ),
               SizedBox(
                 height: 20,
               ),
               LeftBar(
-                barWidth: 40,
+                barWidth: 50,
               ),
               SizedBox(
                 height: 20,
               ),
               RightBar(
                 barWidth: 70,
+              ),
+              SizedBox(
+                height: 20,
               ),
               RightBar(
                 barWidth: 40,
