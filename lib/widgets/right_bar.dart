@@ -2,9 +2,9 @@ import 'package:imc/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class RightBar extends StatelessWidget {
-  final double barWidth;
+  final double bar_Width;
 
-  const RightBar({Key? key, required this.barWidth}) : super(key: key);
+  const RightBar({Key? key, required this.bar_Width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class RightBar extends StatelessWidget {
       children: [
         Container(
           height: 25,
-          width: barWidth,
+          width: bar_Width,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
