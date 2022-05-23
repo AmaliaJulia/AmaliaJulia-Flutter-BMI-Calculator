@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-// ignore: unused_import
 import 'package:imc/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 
